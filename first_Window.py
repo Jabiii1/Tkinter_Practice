@@ -5,58 +5,71 @@
 # imports
 from tkinter import *
 from try_again import secondwin
-from geometry import *
 
-def infoWindow():
-    # window/title/size/Main Label
-    window = Tk()
-    window.title("Personal Information")
-    center_window(mainWindow, window_width, window_height)
+# window/title/size/Main Label
+mainWindow = Tk()
+mainWindow.title("Personal Information")
 
-    Label(window, text="PERSONAL INFORMATION\n", font="Arial").grid(row=0, column=1)
+def center_window(window, width, height):
+    # Get the screen width and height
+    screen_width = window.winfo_screenwidth()
+    screen_height = window.winfo_screenheight()
 
-    # Icon (medyo inaaral ko pa)
-    icon = PhotoImage(file= "D:\ITCS103_GARCIA_1A\TryCodes\info.png")    
-    window.iconphoto(False, icon) 
-
-    # function pag clinick yung done button
-    def Inclick():
-        if Button(done):
-            window.destroy()
-            secondwin()
-        else:
-            pass
+    # Calculate the position for the window to be centered
+    position_top = int(screen_height / 2 - height / 2)
+    position_left = int(screen_width / 2 - width / 2)
     
-        # Done Button
-    done = Button(window, text="Submit", command=Inclick).grid(row=12,column=1)
+    # Set the geometry of the window with the calculated position
+    window.geometry(f'{width}x{height}+{position_left}+{position_top}')
 
-    # First Name and Last Name and Age
-    Label(window, text='First Name:').grid(row=1)
-    Fname = Entry(window).grid(row=1, column=1)
+window_width = 325
+window_height = 500
 
-    Label(window, text='Last Name:').grid(row=2)
-    Lname = Entry(window).grid(row=2, column=1)
+center_window(mainWindow, window_width, window_height)
 
-    Label(window, text="Age:").grid(row=3)
-    age = Entry(window).grid(row=3, column=1)
+Label(mainWindow, text="PERSONAL INFORMATION\n", font="Arial").grid(row=0, column=1)
+
+# Icon (medyo inaaral ko pa)
+icon = PhotoImage(file= "D:\ITCS103_GARCIA_1A\TryCodes\info.png")    
+mainWindow.iconphoto(False, icon) 
+
+# function pag clinick yung done button
+def Inclick():
+    if Button(done):
+        mainWindow.destroy()
+        secondwin()
+    else:
+        pass
+    
+# Done Button
+done = Button(mainWindow, text="Submit", command=Inclick).grid(row=12,column=1)
+
+# First Name and Last Name and Age
+Label(mainWindow, text='First Name:').grid(row=1)
+Fname = Entry(mainWindow).grid(row=1, column=1)
+
+Label(mainWindow, text='Last Name:').grid(row=2)
+Lname = Entry(mainWindow).grid(row=2, column=1)
+
+Label(mainWindow, text="Age:").grid(row=3)
+age = Entry(mainWindow).grid(row=3, column=1)
 
 
 
-    # Gender (medyo di ko pa to gets pero mostly ng function nya ay nagegets ko naman)
-    int = IntVar()
-    Label(window, text="\nGender:", font="Arial").grid(row=5, column=1)
-    Gone = Radiobutton(window, text="Male", variable=int, value=1).grid(row=6)
-    Gtwo = Radiobutton(window, text='Female', variable=int, value=2).grid(row=7)
-    Gthree = Radiobutton(window, text='Other', variable=int, value=3).grid(row=8)
+# Gender (medyo di ko pa to gets pero mostly ng function nya ay nagegets ko naman)
+int = IntVar()
+Label(mainWindow, text="\nGender:", font="Arial").grid(row=5, column=1)
+Gone = Radiobutton(mainWindow, text="Male", variable=int, value=1).grid(row=6)
+Gtwo = Radiobutton(mainWindow, text='Female', variable=int, value=2).grid(row=7)
+Gthree = Radiobutton(mainWindow, text='Other', variable=int, value=3).grid(row=8)
 
-    # Social Accounts
-    Label(window, text="\nSocial Accounts", font="Arial").grid(row=9, column=1)
-    Label(window, text="Email:").grid(row=10)
-    email = Entry(window).grid(row=10,column=1)
-    Label(window, text="Facebook:").grid(row=11)
-    facebook = Entry(window).grid(row=11,column=1)
+# Social Accounts
+Label(mainWindow, text="\nSocial Accounts", font="Arial").grid(row=9, column=1)
+Label(mainWindow, text="Email:").grid(row=10)
+email = Entry(mainWindow).grid(row=10,column=1)
+Label(mainWindow, text="Facebook:").grid(row=11)
+facebook = Entry(mainWindow).grid(row=11,column=1)
 
-    window.mainloop()
+mainWindow.mainloop()
     
 
-infoWindow()
