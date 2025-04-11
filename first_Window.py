@@ -9,7 +9,6 @@ from try_again import secondwin
 # window/title/size/Main Label
 mainWindow = Tk()
 mainWindow.title("Personal Information")
-
 def center_window(window, width, height):
     # Get the screen width and height
     screen_width = window.winfo_screenwidth()
@@ -22,12 +21,16 @@ def center_window(window, width, height):
     # Set the geometry of the window with the calculated position
     window.geometry(f'{width}x{height}+{position_left}+{position_top}')
 
-window_width = 325
+window_width = 350
 window_height = 500
 
 center_window(mainWindow, window_width, window_height)
 
-Label(mainWindow, text="PERSONAL INFORMATION\n", font="Arial").grid(row=0, column=1)
+
+
+
+
+Label(mainWindow, text="PERSONAL INFOMATION\n", font="Arial",justify="center").grid(row=0, column=1)
 
 # Icon (medyo inaaral ko pa)
 icon = PhotoImage(file= "C:\\Users\\jayve\\Documents\\GitHub\\Tkinter_Practice\\info.png")    
@@ -35,25 +38,29 @@ mainWindow.iconphoto(False, icon)
 
 # function pag clinick yung done button
 def Inclick():
-    if Button(done):
+    if Button(Submit):
         mainWindow.destroy()
         secondwin()
     else:
         pass
     
-# Done Button
-done = Button(mainWindow, text="Submit", command=Inclick).grid(row=12,column=1)
+
 
 # First Name and Last Name and Age
 Label(mainWindow, text='First Name:').grid(row=1)
-Fname = Entry(mainWindow).grid(row=1, column=1)
+Fname = Entry(mainWindow, width=20 ,justify="center").place(x=80, y=43)
 
-Label(mainWindow, text='Last Name:').grid(row=2)
-Lname = Entry(mainWindow).grid(row=2, column=1)
+Label(mainWindow, text='Middle Name:').grid(row=2)
+Lname = Entry(mainWindow, width=20  ,justify="center").place(x=80, y=63)
 
-Label(mainWindow, text="Age:").grid(row=3)
-age = Entry(mainWindow).grid(row=3, column=1)
+Label(mainWindow, text='Last Name:').grid(row=3)
+Lname = Entry(mainWindow, width=20  ,justify="center").place(x=80, y=83)
 
+Label(mainWindow, text="Age:").place(x=220, y=43)
+age = Entry(mainWindow, width=7, justify="center").place(x=270, y=43)
+
+Label(mainWindow, text="Course:").place(x=220, y=63)
+age = Entry(mainWindow, width=7, justify="center").place(x=270, y=63)
 
 
 # Gender (medyo di ko pa to gets pero mostly ng function nya ay nagegets ko naman)
@@ -69,6 +76,9 @@ Label(mainWindow, text="Email:").grid(row=10)
 email = Entry(mainWindow).grid(row=10,column=1)
 Label(mainWindow, text="Facebook:").grid(row=11)
 facebook = Entry(mainWindow).grid(row=11,column=1)
+
+# Done Button
+Submit = Button(mainWindow, text="Submit", command=Inclick).grid(row=12,column=1)
 
 mainWindow.mainloop()
     
