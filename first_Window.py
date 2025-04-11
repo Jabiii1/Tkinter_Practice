@@ -27,6 +27,7 @@ window_width = 350
 window_height = 500
 
 center_window(mainWindow, window_width, window_height)
+mainWindow.resizable(FALSE,FALSE)
 
 Label(mainWindow, text="PERSONAL INFORMATION\n", font="Arial",justify="center", bg="lightblue").place(x=80, y=10, )
 
