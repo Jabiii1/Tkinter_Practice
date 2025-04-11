@@ -5,23 +5,23 @@
 # imports
 from tkinter import *
 from tkinter import ttk
-from try_again import warnWin
+from try_again import warning_sign
     
 # window/title/size/Main Label
 mainWindow = Tk()
 mainWindow.title("Personal Information")
 mainWindow.configure(bg="lightblue")
-def center_window(window, width, height):
+def center_window(mainwindow, width, height):
     # Get the screen width and height
-    screen_width = window.winfo_screenwidth()
-    screen_height = window.winfo_screenheight()
+    screen_width = mainwindow.winfo_screenwidth()
+    screen_height = mainwindow.winfo_screenheight()
 
     # Calculate the position for the window to be centered
     position_top = int(screen_height / 2 - height / 2)
     position_left = int(screen_width / 2 - width / 2)
     
     # Set the geometry of the window with the calculated position
-    window.geometry(f'{width}x{height}+{position_left}+{position_top}')
+    mainwindow.geometry(f'{width}x{height}+{position_left}+{position_top}')
 
 window_width = 350
 window_height = 500
@@ -39,7 +39,7 @@ mainWindow.iconphoto(False, icon)
 def Inclick():
     if Button(Submit):
         mainWindow.destroy()
-        warnWin()
+        warning_sign()
     else:
         pass
     
@@ -50,7 +50,7 @@ Label(mainWindow, text='First Name:', bg="lightblue").place(x=8, y=43)
 Fname = Entry(mainWindow, width=20 ,justify="center").place(x=80, y=43)
 
 Label(mainWindow, text='Middle Name:', bg="lightblue").place(x=1, y=63)
-Lname = Entry(mainWindow, width=20  ,justify="center").place(x=80, y=63)
+Mname = Entry(mainWindow, width=20  ,justify="center").place(x=80, y=63)
 
 Label(mainWindow, text='Last Name:', bg="lightblue").place(x=8, y=83)
 Lname = Entry(mainWindow, width=20  ,justify="center").place(x=80, y=83)

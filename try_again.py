@@ -5,54 +5,55 @@ from tkinter import *
 from window import loadingWindow
 
 
-def warnWin():
+def warning_sign():
     # Window,title and size of it.
-    window = Tk()
-    window.title("Warning!")
+    tryWindow = Tk()
+    tryWindow.title("Warning!")
+    tryWindow.configure(bg="lightblue")
 
-    def center_window(window, width, height):
+    def center_window(tryWindow, width, height):
         # Get the screen width and height
-        screen_width = window.winfo_screenwidth()
-        screen_height = window.winfo_screenheight()
+        screen_width = tryWindow.winfo_screenwidth()
+        screen_height = tryWindow.winfo_screenheight()
 
         # Calculate the position for the window to be centered
         position_top = int(screen_height / 2 - height / 2)
         position_left = int(screen_width / 2 - width / 2)
         
         # Set the geometry of the window with the calculated position
-        window.geometry(f'{width}x{height}+{position_left}+{position_top}')
+        tryWindow.geometry(f'{width}x{height}+{position_left}+{position_top}')
 
     window_width = 350
     window_height = 180
 
-    center_window(window, window_width, window_height)
+    center_window(tryWindow, window_width, window_height)
 
-    window.lift()
+    tryWindow.lift()
     # icon na warnig sa taas (di ko pa gets masyado yung sa false na part)
     icon = PhotoImage(file= "C:\\Users\\jayve\\Documents\\GitHub\\Tkinter_Practice\\warning.png")    
-    window.iconphoto(False, icon) 
+    tryWindow.iconphoto(False, icon) 
 
     # Text na nakalagay sa window
-    Label(window, text="This might a while.").place(relx=0.1, rely=0.2)
-    Label(window, text="Are you sure do you want to continue?").place(relx=0.1, rely=0.35)
+    Label(tryWindow, text="This might a while.",bg="lightblue").place(relx=0.1, rely=0.2)
+    Label(tryWindow, text="Are you sure do you want to continue?",bg="lightblue").place(relx=0.1, rely=0.35)
 
     # Pag clinick ang mga button
     def ifYes():
         if Button(yes):
-            window.destroy()
+            tryWindow.destroy()
             loadingWindow()
         else:
             pass
     def ifNo():        
         if Button(no):
-            window.destroy()
+            tryWindow.destroy()
         else:
             pass
                 
 
     #Button (Inaaral ko palang din yung .place at relx and y and lastly yung anchor)  
-    yes = Button(window, text="Yes", width=5, command=ifYes).place(relx=0.6, rely=0.7, anchor="se")
-    no = Button(window, text="No", width=5, command=ifNo).place(relx=0.75, rely=0.7, anchor="se")
+    yes = Button(tryWindow, text="Yes", width=5, command=ifYes).place(relx=0.6, rely=0.7, anchor="se")
+    no = Button(tryWindow, text="No", width=5, command=ifNo).place(relx=0.75, rely=0.7, anchor="se")
 
     # Yung pang call ng window para lumabas
-    window.mainloop()
+    tryWindow.mainloop()

@@ -1,13 +1,13 @@
 from tkinter import *
-
+from first_Window import *
 def infoClicked():
     lastwindow = Tk()
     lastwindow.title("Checking Information")
     
-    def center_window(window, width, height):
+    def center_window(lastwindow, width, height):
         # Get the screen width and height
-        screen_width = window.winfo_screenwidth()
-        screen_height = window.winfo_screenheight()
+        screen_width = lastwindow.winfo_screenwidth()
+        screen_height = lastwindow.winfo_screenheight()
 
         # Calculate the position for the window to be centered
         position_top = int(screen_height / 2 - height / 2)
@@ -22,7 +22,8 @@ def infoClicked():
     center_window(lastwindow, window_width, window_height)
     lastwindow.resizable(FALSE,FALSE)
     
-    
+    Name = Label(lastwindow,text=f"hi")
+    Name.pack()
     
     lastwindow.lift()
     lastwindow.mainloop()
