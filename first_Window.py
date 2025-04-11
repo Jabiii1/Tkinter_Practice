@@ -30,7 +30,7 @@ center_window(mainWindow, window_width, window_height)
 Label(mainWindow, text="PERSONAL INFORMATION\n", font="Arial").grid(row=0, column=1)
 
 # Icon (medyo inaaral ko pa)
-icon = PhotoImage(file= "D:\ITCS103_GARCIA_1A\TryCodes\info.png")    
+icon = PhotoImage(file= "C:\\Users\\jayve\\Documents\\GitHub\\Tkinter_Practice\\info.png")    
 mainWindow.iconphoto(False, icon) 
 
 # function pag clinick yung done button

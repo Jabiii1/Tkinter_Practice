@@ -9,10 +9,27 @@ def secondwin():
     # Window,title and size of it.
     window = Tk()
     window.title("Warning!")
-    window.geometry("350x180")
+
+    def center_window(window, width, height):
+        # Get the screen width and height
+        screen_width = window.winfo_screenwidth()
+        screen_height = window.winfo_screenheight()
+
+        # Calculate the position for the window to be centered
+        position_top = int(screen_height / 2 - height / 2)
+        position_left = int(screen_width / 2 - width / 2)
+        
+        # Set the geometry of the window with the calculated position
+        window.geometry(f'{width}x{height}+{position_left}+{position_top}')
+
+    window_width = 350
+    window_height = 180
+
+    center_window(window, window_width, window_height)
+
     window.lift()
     # icon na warnig sa taas (di ko pa gets masyado yung sa false na part)
-    icon = PhotoImage(file= "D:\ITCS103_GARCIA_1A\TryCodes\warning.png")    
+    icon = PhotoImage(file= "C:\\Users\\jayve\\Documents\\GitHub\\Tkinter_Practice\\warning.png")    
     window.iconphoto(False, icon) 
 
     # Text na nakalagay sa window
