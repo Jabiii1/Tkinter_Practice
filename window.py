@@ -26,8 +26,9 @@ def loadingWindow():
     center_window(window, window_width, window_height)
     
     def clicked():
-        infoClicked()
         window.destroy()
+        infoClicked()
+        
     
     def change_1():
         infos.config(text="Analyzing Complete!", font="Arial, 15")
