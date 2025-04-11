@@ -5,8 +5,8 @@
 # imports
 from tkinter import *
 from tkinter import ttk
-from try_again import secondwin
-
+from try_again import warnWin
+    
 # window/title/size/Main Label
 mainWindow = Tk()
 mainWindow.title("Personal Information")
@@ -39,7 +39,7 @@ mainWindow.iconphoto(False, icon)
 def Inclick():
     if Button(Submit):
         mainWindow.destroy()
-        secondwin()
+        warnWin()
     else:
         pass
     
@@ -96,7 +96,7 @@ provinces = {
             "Aklan", "Antique", "Capiz", "Guimaras", "Iloilo",
             "Bohol", "Cebu", "Negros Oriental", "Siquijor",
             "Biliran", "Eastern Samar", "Leyte", "Northern Samar", "Samar", "Southern Leyte"
-        ],
+        ],  
         "Mindanao": [
             "Zamboanga del Norte", "Zamboanga del Sur", "Zamboanga Sibugay",
             "Bukidnon", "Camiguin", "Lanao del Norte", "Misamis Occidental", "Misamis Oriental",

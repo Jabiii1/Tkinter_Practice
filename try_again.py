@@ -5,7 +5,7 @@ from tkinter import *
 from window import loadingWindow
 
 
-def secondwin():
+def warnWin():
     # Window,title and size of it.
     window = Tk()
     window.title("Warning!")
