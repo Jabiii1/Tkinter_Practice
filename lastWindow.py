@@ -1,5 +1,5 @@
 from tkinter import *
-from first_Window import *
+
 def infoClicked():
     lastwindow = Tk()
     lastwindow.title("Checking Information")
