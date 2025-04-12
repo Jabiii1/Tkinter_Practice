@@ -77,151 +77,263 @@ Label(mainWindow, text="ADDRESS",font="Arial", bg="lightblue").place(x=130, y=11
 # facebook = Entry(mainWindow).grid(row=24,column=1)
 
 
-# Nakakatamad na part (pinag effortan/Challenge)
+# Nakakatamad na part (pinag effortan/Challenge para sa improvements)
 
 island = ["Luzon","Visayas","Mindanao"]
 
-# List and Dictionary (nakakayawa to)
+region = {
+    "Luzon": ["Region-I", "Region-II", "Region-III", "Region-IV-A", "Region-V", "NCR", "CAR", "MIMAROPA"],
+    
+    "Visayas": ["Western Visayas-VI", "Central Visayas-VII", "Eastern Visayas-VIII"],
+    
+    "Mindanao": ["Region-IX", "Region-X", "Region-XI", "Region-XII", "BARMM", "Region-XIII"]
+    
+}
+
 provinces = {
-        "Luzon": [
-            "Ilocos Norte", "Ilocos Sur", "La Union", "Pangasinan",
-            "Batanes", "Cagayan", "Isabela", "Nueva Vizcaya", "Quirino",
-            "Aurora", "Bataan", "Bulacan", "Nueva Ecija", "Pampanga", "Tarlac", "Zambales",
-            "Batangas", "Cavite", "Laguna", "Quezon", "Rizal",
-            "Marinduque", "Occidental Mindoro", "Oriental Mindoro", "Palawan", "Romblon",
-            "Abra", "Apayao", "Benguet", "Ifugao", "Kalinga", "Mountain Province",
-            "Albay", "Camarines Norte", "Camarines Sur", "Catanduanes", "Masbate", "Sorsogon"
-        ],
-        "Visayas": [
-            "Aklan", "Antique", "Capiz", "Guimaras", "Iloilo",
-            "Bohol", "Cebu", "Negros Oriental", "Siquijor",
-            "Biliran", "Eastern Samar", "Leyte", "Northern Samar", "Samar", "Southern Leyte"
-        ],  
-        "Mindanao": [
-            "Zamboanga del Norte", "Zamboanga del Sur", "Zamboanga Sibugay",
-            "Bukidnon", "Camiguin", "Lanao del Norte", "Misamis Occidental", "Misamis Oriental",
-            "Davao de Oro", "Davao del Norte", "Davao del Sur", "Davao Occidental", "Davao Oriental",
-            "Cotabato", "Sarangani", "South Cotabato", "Sultan Kudarat",
-            "Agusan del Norte", "Agusan del Sur", "Dinagat Islands", "Surigao del Norte", "Surigao del Sur",
-            "Basilan", "Lanao del Sur", "Maguindanao del Norte", "Maguindanao del Sur", "Sulu", "Tawi-Tawi"
-        ]
+        # Luzon
+        "Region-I": ["Ilocos Norte", "Ilocos Sur", "La Union", "Pangasinan"],
+        
+        "Region-II":["Batanes", "Cagayan", "Isabela", "Nueva Vizcaya", "Quirino"],
+        
+        "Region-III":["Aurora", "Bataan", "Bulacan", "Nueva Ecija", "Pampanga", "Tarlac", "Zambales"],
+        
+        "Region-IV-A":["Batangas", "Cavite", "Laguna", "Quezon", "Rizal"],
+            
+        "Region-V":["Albay", "Camarines Norte", "Camarines Sur", "Catanduanes", "Masbate", "Sorsogon"],
+        
+        "NCR":["Metro Manila"],
+        
+        "CAR":["Abra", "Apayao", "Benguet", "Ifugao", "Kalinga", "Mountain Province"],
+        
+        "MIMAROPA":["Marinduque", "Occidental Mindoro", "Oriental Mindoro", "Palawan", "Romblon"],
+        
+        # Visayas
+        "Western Visayas-VI":["Aklan", "Antique", "Capiz", "Guimaras", "Iloilo","Negros Oriental"],
+        
+        "Central Visayas-VII":["Bohol", "Cebu", "Negros Oriental", "Siquijor"],
+            
+        "Eastern Visayas-VIII":["Biliran", "Eastern Samar", "Leyte", "Northern Samar", "Samar", "Southern Leyte"],
+        
+        # "Mindanao"
+        "Region-IX": ["Zamboanga del Norte", "Zamboanga del Sur", "Zamboanga Sibugay"],
+        
+        "Region-X":["Bukidnon", "Camiguin", "Lanao del Norte", "Misamis Occidental", "Misamis Oriental"],
+        
+        "Region-XI":["Davao de Oro", "Davao del Norte", "Davao del Sur", "Davao Occidental", "Davao Oriental"],
+        
+        "Region-XII":["Cotabato", "Sarangani", "South Cotabato", "Sultan Kudarat"],
+
+        "BARMM":["Basilan", "Lanao del Sur", "Maguindanao del Norte", "Maguindanao del Sur", "Sulu", "Tawi-Tawi"],
+        
+        "Region-XIII":[ "Agusan del Norte", "Agusan del Sur", "Dinagat Islands", "Surigao del Norte", "Surigao del Sur",]
     }
+
 cities = {
         "Ilocos Norte": ["Laoag", "Batac"],
+        
         "Ilocos Sur": ["Vigan", "Candon", "Tagudin"],
+        
         "La Union": ["San Fernando", "Bauang", "Agoo", "Naguilian"],
+        
         "Pangasinan": ["Dagupan", "San Carlos", "Urdaneta", "Alaminos", "Lingayen", "Calasiao"],
+        
         "Batanes": ["Basco", "Itbayat"],
+        
         "Cagayan": ["Tuguegarao", "Aparri", "Ballesteros", "Claveria"],
+        
         "Isabela": ["Cauayan", "Ilagan", "Santiago", "Roxas", "San Mateo"],
+        
         "Nueva Vizcaya": ["Bayombong", "Solano", "Bagabag"],
+        
         "Quirino": ["Cabarroguis", "Diffun", "Maddela"],
+        
         "Aurora": ["Baler", "Maria Aurora", "Dipaculao"],
+        
         "Bataan": ["Balanga", "Dinalupihan", "Orion", "Mariveles"],
+        
         "Bulacan": ["Malolos", "Meycauayan", "San Jose del Monte", "Bocaue", "Marilao", "Santa Maria"],
+        
         "Nueva Ecija": ["Cabanatuan", "Gapan", "Palayan", "San Jose", "Talavera", "Science City of Muñoz"],
+        
         "Pampanga": ["Angeles", "San Fernando", "Mabalacat", "Apalit"],
+        
         "Tarlac": ["Tarlac City", "Concepcion", "Capas"],
+        
         "Zambales": ["Olongapo", "Iba", "Subic", "Botolan"],
+        
         "Batangas": ["Batangas City", "Lipa", "Tanauan", "San Juan", "Nasugbu"],
+        
         "Cavite": ["Tagaytay", "Trece Martires", "Dasmariñas", "Imus", "Bacoor", "General Trias"],
+        
         "Laguna": ["San Pablo", "Calamba", "Santa Rosa", "Biñan", "Cabuyao", "Los Baños"],
+        
         "Quezon": ["Lucena", "Tayabas", "Sariaya", "Candelaria"],
+        
         "Rizal": ["Antipolo", "Cainta", "Binangonan", "Taytay"],
+        
         "Marinduque": ["Boac", "Santa Cruz", "Mogpog"],
+        
         "Occidental Mindoro": ["Mamburao", "San Jose", "Sablayan"],
+        
         "Oriental Mindoro": ["Calapan", "Pinamalayan", "Naujan"],
+        
         "Palawan": ["Puerto Princesa", "Coron", "El Nido", "Roxas"],
+        
         "Romblon": ["Romblon", "Odiongan", "San Fernando"],
+        
         "Abra": ["Bangued", "Tineg"],
+        
         "Apayao": ["Kabugao", "Conner", "Luna"],
+        
         "Benguet": ["Baguio", "La Trinidad", "Itogon"],
+        
         "Ifugao": ["Lagawe", "Kiangan", "Banaue"],
+        
         "Kalinga": ["Tabuk", "Tinglayan"],
+        
         "Mountain Province": ["Bontoc", "Sagada", "Bauko"],
+        
         "Albay": ["Legazpi", "Tabaco", "Ligao", "Daraga"],
+        
         "Camarines Norte": ["Daet", "Jose Panganiban", "Basud"],
+        
         "Camarines Sur": ["Naga", "Iriga", "Pili", "Caramoan"],
+        
         "Catanduanes": ["Virac", "San Andres"],
+        
         "Masbate": ["Masbate City", "Aroroy", "Ticao"],
+        
         "Sorsogon": ["Sorsogon City", "Bulusan", "Gubat"],
         
         "Aklan": ["Kalibo", "Malay", "Numancia"],
+        
         "Antique": ["San Jose de Buenavista", "Sibalom", "Culasi"],
+        
         "Capiz": ["Roxas City", "Pilar", "Panay"],
+        
         "Guimaras": ["Jordan", "Buenavista", "Nueva Valencia"],
+        
         "Iloilo": ["Iloilo City", "Passi", "Pototan", "Jaro"],
+        
         "Bohol": ["Tagbilaran", "Ubay", "Talibon"],
+        
         "Cebu": ["Cebu City", "Lapu-Lapu", "Mandaue", "Carcar", "Danao"],
+        
         "Negros Oriental": ["Dumaguete", "Bais", "Tanjay", "Bayawan"],
+        
         "Siquijor": ["Siquijor", "Larena", "Lazi"],
+        
         "Biliran": ["Naval", "Kawayan", "Biliran"],
+        
         "Eastern Samar": ["Borongan", "Guiuan", "Oras"],
+        
         "Leyte": ["Tacloban", "Ormoc", "Baybay", "Palo"],
+        
         "Northern Samar": ["Catarman", "Allen", "Bobon"],
+        
         "Samar": ["Catbalogan", "Calbayog", "Gandara"],
+        
         "Southern Leyte": ["Maasin", "Sogod", "Hinunangan"],
-
+    
         "Zamboanga del Norte": ["Dipolog", "Dapitan", "Polanco"],
+        
         "Zamboanga del Sur": ["Pagadian", "Molave", "Labangan"],
+        
         "Zamboanga Sibugay": ["Ipil", "Kabasalan", "Diplahan"],
+        
         "Bukidnon": ["Malaybalay", "Valencia", "Maramag", "Manolo Fortich"],
+        
         "Camiguin": ["Mambajao", "Catarman"],
+        
         "Lanao del Norte": ["Iligan", "Kauswagan", "Tubod"],
+        
         "Misamis Occidental": ["Oroquieta", "Ozamis", "Tangub"],
+        
         "Misamis Oriental": ["Cagayan de Oro", "Gingoog", "Tagoloan"],
+        
         "Davao de Oro": ["Nabunturan", "Monkayo", "Compostela"],
+        
         "Davao del Norte": ["Tagum", "Panabo", "Samal"],
+        
         "Davao del Sur": ["Davao City", "Digos", "Santa Cruz"],
+        
         "Davao Occidental": ["Malita", "Jose Abad Santos"],
+        
         "Davao Oriental": ["Mati", "Baganga", "Cateel"],
+        
         "Cotabato": ["Kidapawan", "M'lang", "Kabacan"],
+        
         "Sarangani": ["Alabel", "Glan", "Malapatan"],
+        
         "South Cotabato": ["Koronadal", "General Santos", "Tupi"],
+        
         "Sultan Kudarat": ["Isulan", "Tacurong", "Lutayan"],
+        
         "Agusan del Norte": ["Butuan", "Cabadbaran", "Nasipit"],
+        
         "Agusan del Sur": ["Bayugan", "Prosperidad", "San Francisco"],
+        
         "Dinagat Islands": ["San Jose", "Loreto"],
+        
         "Surigao del Norte": ["Surigao City", "Siargao", "Claver"],
+        
         "Surigao del Sur": ["Tandag", "Bislig", "Lianga"],
+        
         "Basilan": ["Isabela City", "Lamitan"],
+        
         "Lanao del Sur": ["Marawi", "Balindong", "Malabang"],
+        
         "Maguindanao del Norte": ["Datu Odin Sinsuat", "Barira"],
+        
         "Maguindanao del Sur": ["Buluan", "Pagalungan"],
+        
         "Sulu": ["Jolo", "Patikul", "Parang"],
+        
         "Tawi-Tawi": ["Bongao", "Sitangkai", "Panglima Sugala"]
     }
 
 Label(mainWindow, text="Island:",bg="lightblue").place(x=8, y=143)
-IslandCbox = ttk.Combobox(mainWindow, width=10 ,values=island,justify="center", state="readonly")
-IslandCbox.place(x=55, y=143)          #para mabind kelangan ihiwalay etong .place .grid ewan lang sa .pack
+IslandCbox = ttk.Combobox(mainWindow, width=15 ,values=island,justify="center", state="readonly")
+IslandCbox.place(x=63, y=143)          #para mabind kelangan ihiwalay etong .place .grid ewan lang sa .pack
+IslandCbox.set("Select Island")        #set is parang preview or guide para sa user
 
-Label(mainWindow, text="Region:",bg="lightblue").place(x=153, y=143)
-ProvinceCbox = ttk.Combobox(mainWindow, width=10 ,justify="center", state="readonly")
-ProvinceCbox.place(x=210, y=143)  
+Label(mainWindow, text="Region:",bg="lightblue").place(x=180, y=143)
+RegionCbox = ttk.Combobox(mainWindow, width=15 ,justify="center", state="readonly")
+RegionCbox.place(x=225, y=143)  
+RegionCbox.set("Select Region") 
 
 Label(mainWindow, text="Province:",bg="lightblue").place(x=8, y=170)
-ProvinceCbox = ttk.Combobox(mainWindow, width=10 ,justify="center", state="readonly")
-ProvinceCbox.place(x=55, y=170)        
+ProvinceCbox = ttk.Combobox(mainWindow, width=15 ,justify="center", state="readonly")
+ProvinceCbox.place(x=63, y=170)        
+ProvinceCbox.set("Select Province")
 
-Label(mainWindow, text="City:",bg="lightblue").place(x=153, y=170)
-CityCbox = ttk.Combobox(mainWindow, width=10 ,justify="center", state="readonly")
-CityCbox.place(x=210, y=170) 
+Label(mainWindow, text="City:",bg="lightblue").place(x=180, y=170)
+CityCbox = ttk.Combobox(mainWindow, width=15 ,justify="center", state="readonly")
+CityCbox.place(x=225, y=170) 
+CityCbox.set("Select City")
 
+# Bind na tinuro ni sir
+
+def Island_Update(event):
+    selectedIsland = IslandCbox.get()
+    if selectedIsland in region:
+        RegionCbox["values"] = region[selectedIsland]
+        
+
+def Region_Update(event):
+    selectedRegion = RegionCbox.get()  
+    if selectedRegion in provinces:
+        ProvinceCbox["values"] = provinces[selectedRegion] 
+        
 def Province_Update(event):
-    selectedIsland = IslandCbox.get()    #Nag declare ako ng variable para mas madali maintindihan
-    if selectedIsland in provinces:
-        ProvinceCbox["values"] = provinces[selectedIsland]
-
-
-def Cities_Update(event):
     selectedProvince = ProvinceCbox.get()  
     if selectedProvince in cities:
         CityCbox["values"] = cities[selectedProvince]  
 
-# Bind events
-IslandCbox.bind("<<ComboboxSelected>>", Province_Update)
-ProvinceCbox.bind("<<ComboboxSelected>>", Cities_Update)
+IslandCbox.bind("<<ComboboxSelected>>", Island_Update)
+RegionCbox.bind("<<ComboboxSelected>>", Region_Update)
+ProvinceCbox.bind("<<ComboboxSelected>>", Province_Update)
     
 
 
@@ -232,7 +344,7 @@ ProvinceCbox.bind("<<ComboboxSelected>>", Cities_Update)
 # May 3 types ang state: normal = editable, readonly = read only, disabled = di nacliclick(pede sa conditional)
 
 # Done Button
-Submit = Button(mainWindow, text="Submit", command=Inclick).place(x=153, y=200)
+Submit = Button(mainWindow, text="Submit", command=Inclick).place(x=153, y=250)
 mainWindow.mainloop()
     
 
