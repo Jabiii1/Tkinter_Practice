@@ -33,7 +33,7 @@ mainWindow.resizable(FALSE,FALSE)
 Label(mainWindow, text="PERSONAL INFORMATION\n", font="Arial",justify="center", bg="lightblue").place(x=80, y=10, )
 
 # Icon (medyo inaaral ko pa)
-icon = PhotoImage(file= "C:\\Users\\jayve\\Documents\\GitHub\\Tkinter_Practice\\info.png")    
+icon = PhotoImage(file= "D:\\ITCS103_GARCIA_1A\\Tkinter_Practice\\info.png")    
 mainWindow.iconphoto(False, icon) 
 
 # function pag clinick yung done button

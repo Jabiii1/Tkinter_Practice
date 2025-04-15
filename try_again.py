@@ -30,7 +30,7 @@ def warning_sign():
 
     tryWindow.lift()
     # icon na warnig sa taas (di ko pa gets masyado yung sa false na part)
-    icon = PhotoImage(file= "C:\\Users\\jayve\\Documents\\GitHub\\Tkinter_Practice\\warning.png")    
+    icon = PhotoImage(file= "D:\\ITCS103_GARCIA_1A\\Tkinter_Practice\\warning.png")    
     tryWindow.iconphoto(False, icon) 
 
     # Text na nakalagay sa window
