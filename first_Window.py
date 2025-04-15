@@ -6,7 +6,8 @@
 from tkinter import *
 from tkinter import ttk
 from try_again import warning_sign
-    
+
+
 # window/title/size/Main Label
 mainWindow = Tk()
 mainWindow.title("Personal Information")
@@ -47,7 +48,8 @@ def Inclick():
 
 # Personal Info
 Label(mainWindow, text='First Name:', bg="lightblue").place(x=8, y=43)
-Fname = Entry(mainWindow, width=20 ,justify="center").place(x=80, y=43)
+Fname = Entry(mainWindow, width=20 ,justify="center")
+Fname.place(x=80, y=43)
 
 Label(mainWindow, text='Middle Name:', bg="lightblue").place(x=1, y=63)
 Mname = Entry(mainWindow, width=20  ,justify="center").place(x=80, y=63)
@@ -347,4 +349,3 @@ ProvinceCbox.bind("<<ComboboxSelected>>", Province_Update)
 Submit = Button(mainWindow, text="Submit", command=Inclick).place(x=153, y=250)
 mainWindow.mainloop()
     
-

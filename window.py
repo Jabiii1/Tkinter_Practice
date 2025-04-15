@@ -3,7 +3,7 @@
 
 from tkinter import *
 from tkinter import ttk
-from lastWindow import *
+from lastWindow import infoClicked
 
 def loadingWindow():
     loadWindow = Tk()

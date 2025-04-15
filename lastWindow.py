@@ -22,7 +22,7 @@ def infoClicked():
     center_window(lastwindow, window_width, window_height)
     lastwindow.resizable(FALSE,FALSE)
     
-    Name = Label(lastwindow,text=f"hi")
+    Name = Label(lastwindow,text="hI")
     Name.pack()
     
     lastwindow.lift()
